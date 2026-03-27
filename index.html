@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TravelBloom</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0b3d3b;
+    color: white;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.search-box input {
+    padding: 5px;
+}
+
+.search-box button {
+    padding: 6px 10px;
+    margin-left: 5px;
+}
+
+/* HERO */
+.hero {
+    height: 90vh;
+    background: url("https://images.unsplash.com/photo-1494526585095-c41746248156") no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay {
+    color: white;
+    text-align: center;
+    background: rgba(0,0,0,0.5);
+    padding: 20px;
+}
+
+/* RESULTS */
+#results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card img {
+    width: 100%;
+}
+
+.card h3, .card p {
+    margin: 10px;
+}
+
+/* ABOUT */
+.about {
+    padding: 40px;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+/* CONTACT */
+.contact {
+    padding: 40px;
+    text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <h2>TravelBloom</h2>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+    </ul>
+
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Enter beach, temple, or country">
+        <button type="button" onclick="searchPlaces()">Search</button>
+        <button type="button" onclick="clearResults()">Clear</button>
+    </div>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="hero">
+    <div class="overlay">
+        <h1>EXPLORE DREAM DESTINATION</h1>
+        <p>Discover beaches, temples, and countries.</p>
+    </div>
+</section>
+
+<!-- RESULTS -->
+<section id="results"></section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+    <h1>ABOUT US</h1>
+    <p>We help you discover the best travel destinations across the world.</p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+    <h1>CONTACT US</h1>
+    <p>Email: travel@bloom.com</p>
+</section>
+
+<script src="travel_recommendation.js"></script>
+
+</body>
+</html>
